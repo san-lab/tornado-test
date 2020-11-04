@@ -24,10 +24,20 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
 
+    //development: {
+    //  host: '127.0.0.1',     // Localhost (default: none)
+    //  port: 8545,            // Standard Ethereum port (default: none)
+    //  network_id: '*',       // Any network (default: none)
+    //},
+
     development: {
-      host: '127.0.0.1',     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
-      network_id: '*',       // Any network (default: none)
+      provider: () => new HDWalletProvider('15e8dee150b83e2fa09fd6a6f56f07c2e7f7a8d980fbab54b0b8e9443fc6508d', 'http://52.157.68.69:8545'),
+      network_id: 1972,
+      gas: 4600000,
+      gasPrice: utils.toWei('1', 'gwei'),
+      // confirmations: 0,
+      // timeoutBlocks: 200,
+      //skipDryRun: true
     },
 
     // Another network with more advanced options...
